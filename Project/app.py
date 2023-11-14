@@ -11,5 +11,9 @@ def home():
 def users():
     return render_template('blog.html')
 
+@app.route('/room/')
+def rooms():
+    return render_template('room.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
