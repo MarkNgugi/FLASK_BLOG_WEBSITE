@@ -2,22 +2,26 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+blogs = [
+    {'id':1, 'name':'DJANGO'},
+    {'id':2, 'name':'SPORTS'},
+    {'id':3, 'name':'EDUCATION'},
+    {'id':4, 'name':'MUSIC'},
+    {'id':5, 'name':'WEB DEVELOPMENT'}
+]
 
+@app.route('/home/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html',blogs=blogs)
 
-@app.route('/user/')
-def users():
-    return render_template('blog.html')
+@app.route('/blog/<int:pk>/')
+def blog(pk):
+    blog = None
+    for i in blogs:
+        if i['id'] == int(pk):
+            blog = i
+    return render_template('blog.html', blogs=blog)
 
-@app.route('/room/')
-def rooms():
-    return render_template('room.html')
-
-@app.route('/profile/')
-def profile():
-    return render_template('profile.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
