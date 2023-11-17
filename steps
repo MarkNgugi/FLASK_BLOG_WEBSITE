@@ -1,0 +1,19 @@
+* Create a simple view that maps to a url/route
+* Render out simple templates 
+
+====================
+	2. TEMPLATES
+====================
+
+TEMPLATE INHERITANCE
+Create a simple navigation bar and apply template inheritance
+	* without the main.html file
+	* with the main.html file
+   
+PASS IN DATA INTO THE TEMPLATES (django template engine)
+	* render out data from a key value pair into a template
+
+DYNAMIC ROUTING (using dynamic url's)
+* Create a dynamic url without a logic
+* Create a dynamic url with a logic (func,class,loop,...)
+* Create a url with a name
